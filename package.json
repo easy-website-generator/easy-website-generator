@@ -1,0 +1,51 @@
+{
+  "name": "easy-website-generator",
+  "version": "0.0.1",
+  "description": "generate modern static web pages with sass, coffee, haml and much more",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --colors --recursive --compilers coffee:coffee-script/register"
+  },
+  "bin": {
+    "ewg": "./bin/ewg"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easy-website-generator/easy-website-generator.git"
+  },
+  "keywords": [
+    "easy-website-generator",
+    "generator",
+    "gulp",
+    "static",
+    "html",
+    "haml",
+    "coffee",
+    "sass",
+    "website"
+  ],
+  "author": "Creative-Workflow <easy-website-generator@creative-workflow.berlin>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/easy-website-generator/easy-website-generator/issues"
+  },
+  "homepage": "https://github.com/easy-website-generator/easy-website-generator#readme",
+  "dependencies": {
+    "coffee-script": "^1.10.0",
+    "ewg-config": "^1.0.1",
+    "ewg-logging": "^1.0.0",
+    "ewg-generator": "^1.0.1",
+    "gulp": "^3.9.0",
+    "mkdirp": "^0.5.1",
+    "request": "^2.69.0",
+    "rmdir": "^1.2.0",
+    "unzip": "^0.1.11",
+    "yargs": "^3.32.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "mocha-sinon": "^1.1.5",
+    "sinon": "^1.17.3"
+  }
+}

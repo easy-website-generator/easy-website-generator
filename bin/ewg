@@ -1,0 +1,62 @@
+#!/usr/bin/env node
+
+require('coffee-script/register')
+
+var exec = require('child_process').spawn;
+
+var log  = require('ewg-logging');
+
+var argv = require('yargs')
+    .usage('Usage: $0 [command] [options]')
+    .help('help')
+    .version(function() {
+      return require('../package').version;
+    })
+    .demand(1)
+    .command('init',     'initialises a ewg repo')
+    .command('serve',    'starts a webserver on ewg repo and watches for changes')
+    .command('generate', 'generates the dist folder from your ewg repo')
+    .option('theme',{
+      describe: 'installs a zipped theme from url when running ewg "init"',
+      default: 'ewg-template-default'
+    })
+    .option('production',{
+      describe: 'loads production settings when running ewg "serve" or "generate", default: development'
+    })
+    .option('test',{
+      describe: 'load test settings when running ewg "serve" or "generate", default: development'
+    })
+    .argv;
+
+var gulpArgs = "";
+if(argv.test){
+  process.argv.push('--test');
+  gulpArgs = gulpArgs + ' --test'
+}
+if(argv.production){
+  process.argv.push('--production');
+  gulpArgs = gulpArgs + ' --production'
+}
+
+if(argv._[0] == 'init'){
+  log.green("installing theme: " + argv.theme)
+  require(__dirname + "/../lib/ewg/installer").init(argv.theme);
+}
+else if(argv._[0] == 'serve'){
+  cmd = exec('gulp serve' + gulpArgs);
+
+  cmd.stdout.on('data', (data) => {
+    log.log("stdout: ${data}");
+  });
+
+  cmd.stderr.on('data', (data) => {
+    log.error("stderr: ${data}");
+  });
+
+  cmd.on('close', (code) => {
+    log.log("child process exited with code ${code}");
+  });
+}
+else if(argv._[0] == 'generate'){
+  exec('gulp generate' + gulpArgs);
+}
