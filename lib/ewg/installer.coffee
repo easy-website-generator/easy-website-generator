@@ -75,4 +75,4 @@ module.exports = m =
 
     for entry in config.template.run_after_copy
       exec entry, (error, stdout, stderr) ->
-        log.log stdout
+        log.log error, stdout, stderr

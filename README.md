@@ -13,7 +13,7 @@ Now you can init your workspace with:
 ``ewg init [template]``
 
 And to see the magic running (opens a browser window if ready):
-``ewg serve``
+``gulp serve # later: ewg serve``
 
 
 ### Ressources
