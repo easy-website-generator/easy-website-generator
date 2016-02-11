@@ -6,7 +6,7 @@ The Easy-Website-Generator
 ### installation
 First you need to install nodejs, follow https://nodejs.org
 
-The create your new workspace folder and change cwd
+The create your new workspace folder and change your current directory
 
 ``mkdir my-workspace && cd my-workspace``
 
@@ -15,6 +15,8 @@ Then install the Easy-Website-Generator via npm in your terminal:
 ``npm install -g easy-website-generator``
 
 ``npm install -g gulp``
+
+_In case you have permission probles prefix the commandos with sudo_
 
 Now you can init your workspace with:
 
