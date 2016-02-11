@@ -38,13 +38,19 @@ Optionen:
   --help        Hilfe anzeigen                                         [boolean]
   --version     Version anzeigen                                       [boolean]
   --theme       installs a zipped theme from url when running ewg "init"
-                                              [Standard: "ewg-template-default"]
+                                              [Standard: "ewg-template-simple"]
   --production  loads production settings when running ewg "serve" or
                 "generate", default: development
   --test        load test settings when running ewg "serve" or "generate",
                 default: development
 
 ```
+
+### available themes
+
+``ewg init --theme ewg-theme-simple`` see: https://github.com/easy-website-generator/ewg-theme-simple
+
+``ewg init --theme ewg-theme-default`` see: https://github.com/easy-website-generator/ewg-theme-default
 
 ### Ressources
 > "[Creative-Workflow](http://www.creative-workflow.berlin/company.html)"

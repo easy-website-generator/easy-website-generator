@@ -12,7 +12,7 @@ log     = require 'ewg-logging'
 localZip = "./tmp.zip"
 
 module.exports = m =
-  init: (theme = 'ewg-theme-default') =>
+  init: (theme = 'ewg-simple-default') =>
     themePath = m.detectThemeSource theme
 
     log.green "installing theme: #{themePath}"
@@ -42,9 +42,10 @@ module.exports = m =
       unzip.Extract({ path: target }))
 
     stream.on 'close', =>
+      fs.unlink zipFile
+
       m.install()
 
-      fs.unlink zipFile
 
   detectWsConfig: (basePath) ->
     glob.sync("#{basePath}/**/workspace.yml")[0]
