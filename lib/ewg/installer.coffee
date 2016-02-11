@@ -14,20 +14,19 @@ localZip = "#{srcPath}/tmp.zip"
 
 module.exports = m =
   init: (theme = 'ewg-theme-default') =>
-    theme = m.themeSource theme
+    themePath = m.detectThemeSource theme
 
-    log.green "installing theme: #{theme}"
+    log.green "installing theme: #{themePath}"
 
-    unless fs.existsSync srcPath
-      fs.mkdirSync srcPath
+    # remove previous downloaded zip file in case of broken installation
+    fs.unlink localZip if fs.existsSync localZip
 
-    if fs.existsSync localZip
-      fs.unlink localZip
+    # download zipped theme file
+    m.download themePath, localZip
 
-    m.download theme, localZip
-
-  themeSource: (theme) ->
+  detectThemeSource: (theme = 'ewg-theme-default') ->
     unless theme[...4] is 'http'
+      # if theme source is no url, it is a ewg hostet theme
       theme = "https://github.com/easy-website-generator/#{theme}/archive/master.zip"
 
     theme
@@ -60,19 +59,19 @@ module.exports = m =
         fs.rename src, target
 
   install: =>
+    # search for workspace.yml in downloaded and extractet folders
     wsConfig = m.detectWsConfig(srcPath)
 
     config = loader.loadRawYaml(wsConfig).development
 
-    zipFolder = path.dirname wsConfig
+    extractedThemeFolder = path.dirname wsConfig
 
-    m.moveFilesToParentDirectory zipFolder
+    # copy all files from unzipped folder to workspace
+    m.moveFilesToParentDirectory extractedThemeFolder
 
-    rmdir zipFolder
-
-    for entry in config.template.copy_to_root
-      fs.rename("#{srcPath}/#{entry}", entry)
+    # delete unzipped folder
+    rmdir extractedThemeFolder
 
     for entry in config.template.run_after_copy
-      exec entry, (error, stdout, stderr) ->
+      exec entry, (error, stdout, stderr) =>
         log.log error, stdout, stderr
