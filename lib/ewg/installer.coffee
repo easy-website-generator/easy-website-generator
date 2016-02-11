@@ -9,8 +9,7 @@ mkdirp  = require 'mkdirp'
 rmdir   = require 'rmdir'
 log     = require 'ewg-logging'
 
-srcPath  = "#{process.cwd()}/src"
-localZip = "#{srcPath}/tmp.zip"
+localZip = "./tmp.zip"
 
 module.exports = m =
   init: (theme = 'ewg-theme-default') =>
@@ -36,7 +35,7 @@ module.exports = m =
     request.get(remote).pipe stream
 
     stream.on 'finish', =>
-      m.extract(local, srcPath)
+      m.extract(local, '.')
 
   extract: (zipFile, target) =>
     stream = fs.createReadStream(zipFile).pipe(
@@ -60,7 +59,7 @@ module.exports = m =
 
   install: =>
     # search for workspace.yml in downloaded and extractet folders
-    wsConfig = m.detectWsConfig(srcPath)
+    wsConfig = m.detectWsConfig('.')
 
     config = loader.loadRawYaml(wsConfig).development
 
