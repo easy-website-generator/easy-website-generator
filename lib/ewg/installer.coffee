@@ -63,7 +63,7 @@ module.exports = m =
 
     config = loader.loadRawYaml(wsConfig).development
 
-    extractedThemeFolder = path.dirname wsConfig
+    extractedThemeFolder = "#{path.dirname(wsConfig)}/.."
 
     # copy all files from unzipped folder to workspace
     m.moveFilesToParentDirectory extractedThemeFolder
