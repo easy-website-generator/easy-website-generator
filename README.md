@@ -16,15 +16,35 @@ Then install the Easy-Website-Generator via npm in your terminal:
 
 ``npm install -g gulp``
 
-_In case you have permission probles prefix the commandos with sudo_
+_In case you have permission problems prefix the commandos with ``sudo``_
 
 Now you can init your workspace with:
 
-``ewg init [template=ewg-template-default]``
+``ewg init``
 
 And to see the magic running (opens a browser window if ready):
 ``gulp serve # later: ewg serve``
 
+### command line arguments
+```
+Usage: ewg [command] [options]
+
+Kommandos:
+  init      initialises a ewg repo
+  serve     starts a webserver on ewg repo and watches for changes
+  generate  generates the dist folder from your ewg repo
+
+Optionen:
+  --help        Hilfe anzeigen                                         [boolean]
+  --version     Version anzeigen                                       [boolean]
+  --theme       installs a zipped theme from url when running ewg "init"
+                                              [Standard: "ewg-template-default"]
+  --production  loads production settings when running ewg "serve" or
+                "generate", default: development
+  --test        load test settings when running ewg "serve" or "generate",
+                default: development
+
+```
 
 ### Ressources
 > "[Creative-Workflow](http://www.creative-workflow.berlin/company.html)"
