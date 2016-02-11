@@ -42,9 +42,9 @@ module.exports = m =
       unzip.Extract({ path: target }))
 
     stream.on 'close', =>
-      fs.unlink zipFile
-
       m.install()
+
+      fs.unlink zipFile
 
   detectWsConfig: (basePath) ->
     glob.sync("#{basePath}/**/workspace.yml")[0]
@@ -72,5 +72,6 @@ module.exports = m =
     rmdir extractedThemeFolder
 
     for entry in config.template.run_after_copy
+      console.log entry
       exec entry, (error, stdout, stderr) =>
         log.log error, stdout, stderr
