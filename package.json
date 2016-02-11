@@ -1,6 +1,6 @@
 {
   "name": "easy-website-generator",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "generate modern static web pages with sass, coffee, haml and much more",
   "main": "index.js",
   "scripts": {
@@ -34,7 +34,7 @@
     "coffee-script": "^1.10.0",
     "ewg-config": "^1.0.1",
     "ewg-logging": "^1.0.0",
-    "ewg-generator": "^1.0.4",
+    "ewg-generator": "^1.0.5",
     "mkdirp": "^0.5.1",
     "request": "^2.69.0",
     "rmdir": "^1.2.0",
