@@ -1,29 +1,53 @@
 # easy-website-generator [![npm version](https://badge.fury.io/js/easy-website-generator.svg)](https://badge.fury.io/js/easy-website-generator) [![Build Status](https://travis-ci.org/easy-website-generator/easy-website-generator.svg?branch=master)](https://travis-ci.org/easy-website-generator/easy-website-generator) [![Code Climate](https://codeclimate.com/github/easy-website-generator/easy-website-generator/badges/gpa.svg)](https://codeclimate.com/github/easy-website-generator/easy-website-generator)
 
+The quick and easy way to develop modern and fast static websites a.k.a Easy-Website-Generator =)
 
-The Easy-Website-Generator
+###### Supports:
+  * css styling with [sass](http://sass-lang.com/documentation/file.SASS_REFERENCE.html) and pre build helpers
+  * javascript development with [coffee](http://coffeescript.org/)
+  * html templating with a hacked [haml-coffee](https://github.com/easy-website-generator/haml-coffee)
+  * custom and predefined haml helpers via nodeJs modules
+  * site map generation
+  * google analytics
+  * twitter and opengraph tags
+  * ...
 
-### installation
-First you need to install nodejs, follow https://nodejs.org
+###### Uses:
+  * [nodejs](https://nodejs.org/en/)
+  * [gulp](https://github.com/gulpjs/gulp)
+  * [browser-sync](https://browsersync.io/)
+  * [Easy-Website-Generator](https://github.com/easy-website-generator/)
 
-The create your new workspace folder and change your current directory
 
-``mkdir my-workspace && cd my-workspace``
+### Installation
+First you need to install [nodeJs](https://nodejs.org/en/download/)
 
-Then install the Easy-Website-Generator via npm in your terminal:
+```
 
-``npm install -g easy-website-generator``
+npm install -g easy-website-generator
 
-``npm install -g gulp``
+mkdir my-workspace
+
+cd my-workspace
+
+ewg init --theme simple
+
+npm install -g coffee-script
+npm install -g bower
+npm install --cached
+
+gulp serve
+
+```
 
 _In case you have permission problems prefix the commandos with ``sudo``_
 
-Now you can init your workspace with:
+After running ``gulp serve`` the ewg will compile the html pages and opens a browser. On every source change the browser will reload.
 
-``ewg init``
+### Ressources
+> "[Easy-Website-Generator](https://github.com/easy-website-generator/)"
 
-And to see the magic running (opens a browser window if ready):
-``gulp serve # later: ewg serve``
+> "[Creative-Workflow](http://www.creative-workflow.berlin/company.html)"
 
 ### command line arguments
 ```
@@ -31,14 +55,14 @@ Usage: ewg [command] [options]
 
 Kommandos:
   init      initialises a ewg repo
-  serve     starts a webserver on ewg repo and watches for changes
+  serve     !not workin at he moment! starts a webserver on ewg repo and watches for changes
   generate  generates the dist folder from your ewg repo
 
 Optionen:
   --help        Hilfe anzeigen                                         [boolean]
   --version     Version anzeigen                                       [boolean]
   --theme       installs a zipped theme from url when running ewg "init"
-                                              [Standard: "ewg-template-simple"]
+                                              [Standard: "simple"]
   --production  loads production settings when running ewg "serve" or
                 "generate", default: development
   --test        load test settings when running ewg "serve" or "generate",
@@ -55,4 +79,5 @@ Optionen:
 ### Ressources
 > "[Creative-Workflow](http://www.creative-workflow.berlin/company.html)"
 
+> "[Themes](https://github.com/easy-websites)"
 > TODO docs via github.io page
