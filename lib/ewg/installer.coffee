@@ -12,7 +12,7 @@ log     = require 'ewg-logging'
 localZip = "./tmp.zip"
 
 module.exports = m =
-  init: (theme = 'ewg-simple-default') =>
+  init: (theme = 'simple') =>
     themePath = m.detectThemeSource theme
 
     log.green "installing theme: #{themePath}"
@@ -26,7 +26,7 @@ module.exports = m =
   detectThemeSource: (theme = 'ewg-theme-default') ->
     unless theme[...4] is 'http'
       # if theme source is no url, it is a ewg hostet theme
-      theme = "https://github.com/easy-website-generator/#{theme}/archive/master.zip"
+      theme = "https://github.com/easy-websites/ewg-theme-#{theme}/archive/master.zip"
 
     theme
 

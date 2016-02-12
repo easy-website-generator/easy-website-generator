@@ -18,7 +18,7 @@ var argv = require('yargs')
     .command('generate', 'generates the dist folder from your ewg repo')
     .option('theme',{
       describe: 'installs a zipped theme from url when running ewg "init"',
-      default: 'ewg-template-default'
+      default: 'simple'
     })
     .option('production',{
       describe: 'loads production settings when running ewg "serve" or "generate", default: development'
