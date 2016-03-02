@@ -47,19 +47,19 @@ After running ``gulp serve`` the ewg will compile the html pages and opens a bro
 
 > "[Creative-Workflow](http://www.creative-workflow.berlin/company.html)"
 
-### gulp tasks
+### Available Tasks
 For a compleete list type: ``gulp -T``
 
 ### command line arguments
 ```
 Usage: ewg [command] [options]
 
-Kommandos:
+Commands:
   init      initialises a ewg repo
   serve     !not workin at he moment, use gulp serve! starts a webserver on an ewg repo and reloads on changes
   generate  generates the dist folder from your ewg repo
 
-Optionen:
+Options:
   --help        help
   --version     version
   --theme       installs a zipped theme from url when running ewg "init"
