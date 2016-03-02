@@ -71,15 +71,17 @@ Optionen:
 
 ```
 
-### available themes
+### Themes
 
 ``ewg init --theme simple`` see: https://github.com/easy-websites/ewg-theme-simple
 
 ``ewg init --theme default`` see: https://github.com/easy-websites/ewg-theme-default
 
-### Ressources
-> "[Creative-Workflow](http://www.creative-workflow.berlin/company.html)"
+Planned themes are here: https://github.com/easy-websites
 
-> "[Themes](https://github.com/easy-websites)"
+### Ressources
+> "[Easy-Website-Generator](https://github.com/easy-website-generator/easy-website-generator)"
+
+> "[Creative-Workflow](http://www.creative-workflow.berlin/company.html)"
 
 > TODO docs via github.io page
