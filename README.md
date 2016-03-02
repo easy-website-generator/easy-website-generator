@@ -20,11 +20,11 @@ The quick and easy way to develop modern and fast static websites a.k.a Easy-Web
 
 
 ### Installation
-First you need to install [nodeJs](https://nodejs.org/en/download/)
+First you need to install [nodeJs](https://nodejs.org/en/download/). Then in your terminal:
 
 ```
 
-npm install -g easy-website-generator
+npm install -g easy-website-generator coffee-script bower gulp
 
 mkdir my-workspace
 
@@ -32,8 +32,6 @@ cd my-workspace
 
 ewg init --theme simple
 
-npm install -g coffee-script
-npm install -g bower
 npm install --cached
 
 gulp serve
@@ -49,18 +47,21 @@ After running ``gulp serve`` the ewg will compile the html pages and opens a bro
 
 > "[Creative-Workflow](http://www.creative-workflow.berlin/company.html)"
 
+### gulp tasks
+For a compleete list type: ``gulp -T``
+
 ### command line arguments
 ```
 Usage: ewg [command] [options]
 
 Kommandos:
   init      initialises a ewg repo
-  serve     !not workin at he moment! starts a webserver on ewg repo and watches for changes
+  serve     !not workin at he moment, use gulp serve! starts a webserver on an ewg repo and reloads on changes
   generate  generates the dist folder from your ewg repo
 
 Optionen:
-  --help        Hilfe anzeigen                                         [boolean]
-  --version     Version anzeigen                                       [boolean]
+  --help        help
+  --version     version
   --theme       installs a zipped theme from url when running ewg "init"
                                               [Standard: "simple"]
   --production  loads production settings when running ewg "serve" or
@@ -72,12 +73,13 @@ Optionen:
 
 ### available themes
 
-``ewg init --theme ewg-theme-simple`` see: https://github.com/easy-website-generator/ewg-theme-simple
+``ewg init --theme simple`` see: https://github.com/easy-websites/ewg-theme-simple
 
-``ewg init --theme ewg-theme-default`` see: https://github.com/easy-website-generator/ewg-theme-default
+``ewg init --theme default`` see: https://github.com/easy-websites/ewg-theme-default
 
 ### Ressources
 > "[Creative-Workflow](http://www.creative-workflow.berlin/company.html)"
 
 > "[Themes](https://github.com/easy-websites)"
+
 > TODO docs via github.io page
