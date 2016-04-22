@@ -40,6 +40,8 @@ gulp serve
 
 _In case you have permission problems prefix the commandos with ``sudo``_
 
+_Available themes at the moment: all, simple_
+
 After running ``gulp serve`` the ewg will compile the html pages and opens a browser. On every source change the browser will reload.
 
 ### Ressources

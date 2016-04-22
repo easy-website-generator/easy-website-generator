@@ -12,7 +12,7 @@ log     = require 'ewg-logging'
 localZip = "./tmp.zip"
 
 module.exports = m =
-  init: (theme = 'simple') =>
+  init: (theme = 'all') =>
     themePath = m.detectThemeSource theme
 
     log.green "installing theme: #{themePath}"
