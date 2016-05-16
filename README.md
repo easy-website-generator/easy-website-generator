@@ -30,7 +30,7 @@ mkdir my-workspace
 
 cd my-workspace
 
-ewg init --theme simple
+ewg init --theme all
 
 npm install --cached
 
@@ -87,3 +87,10 @@ Planned themes are here: https://github.com/easy-websites
 > "[Creative-Workflow](http://www.creative-workflow.berlin/company.html)"
 
 > TODO docs via github.io page
+
+### Changes
+
+##### Version 0.0.12
+  * move and rename ``./src/workspace.yml`` to ``./ewg-config.yml``
+  * lib/ewg/workspace full configured via ewg-config.yml
+  * new config values introduces ``paths.src.base: './src'`` and ``paths.dist.base: './dist'``
