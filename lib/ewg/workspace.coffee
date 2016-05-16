@@ -5,9 +5,12 @@ nodePath = require 'path'
 Generator               = require 'ewg-generator'
 
 class Workspace
-  constructor: (@srcPath, @distPath, @configFile) ->
+  constructor: (@configFile) ->
     config         = new Config(@configFile, @onChange)
+
     @config        = config.config
+    @srcPath       = @config.paths.src.base ? './src'
+    @distPath       = @config.paths.dist.base ? './dist'
     @isDevelopment = stage.isDevelopment()
     @isProduction  = stage.isProduction()
     @isTest        = stage.isTest()
@@ -41,9 +44,7 @@ class Workspace
   fileExists: (path) ->
     fs.existsSync path
 
-  onChange: ->
+  onChange: =>
     @gulp.run 'generate'
 
-module.exports = new Workspace("src",
-                               "dist",
-                               "src/workspace.yml")
+module.exports = new Workspace("ewg-config.yml")
