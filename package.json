@@ -33,11 +33,12 @@
   "dependencies": {
     "coffee-script": "^1.10.0",
     "ewg-config": "*",
-    "ewg-logging": "*",
     "ewg-generator": "*",
+    "ewg-logging": "*",
     "mkdirp": "^0.5.1",
     "request": "^2.69.0",
     "rmdir": "^1.2.0",
+    "sinon": "^1.17.4",
     "unzip": "^0.1.11",
     "yargs": "^3.32.0"
   },
