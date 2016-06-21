@@ -91,6 +91,9 @@ Planned themes are here: https://github.com/easy-websites
 > TODO docs via github.io page
 
 ### Changes
+##### Version 0.0.14
+  * support new ewg-gemerator basePath option
+
 ##### Version 0.0.13
   * ewg serve now prints colored child process output
 
