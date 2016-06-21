@@ -1,6 +1,6 @@
 {
   "name": "easy-website-generator",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "generate modern static web pages with sass, coffee, haml and much more",
   "main": "index.js",
   "scripts": {
