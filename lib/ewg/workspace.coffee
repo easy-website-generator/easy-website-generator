@@ -34,7 +34,8 @@ class Workspace
     g = new Generator(
                 path.replace('/', '-'),
                 "#{@config.generators.folder}/#{path}/config.yml",
-                @gulp)
+                @gulp,
+                "#{@config.basePath?}")
 
     unless g.config.hasOwnProperty 'stop_on_error'
       g.config.stop_on_error = @config.generators.stop_on_error
