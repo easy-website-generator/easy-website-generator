@@ -10,7 +10,7 @@ class Workspace
 
     @config        = config.config
     @srcPath       = @config.paths.src.base ? './src'
-    @distPath       = @config.paths.dist.base ? './dist'
+    @distPath      = @config.paths.dist.base ? './dist'
     @isDevelopment = stage.isDevelopment()
     @isProduction  = stage.isProduction()
     @isTest        = stage.isTest()
