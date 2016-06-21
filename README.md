@@ -34,7 +34,7 @@ ewg init --theme all
 
 npm install --cached
 
-gulp serve
+ewg serve
 
 ```
 
@@ -42,7 +42,7 @@ _In case you have permission problems prefix the commandos with ``sudo``_
 
 _Available themes at the moment: all, simple_
 
-After running ``gulp serve`` the ewg will compile the html pages and opens a browser. On every source change the browser will reload.
+After running ``ewg serve`` the ewg will compile the html pages and opens a browser. On every source change the browser will reload.
 
 ### Ressources
 > "[Easy-Website-Generator](https://github.com/easy-website-generator/)"
@@ -50,7 +50,7 @@ After running ``gulp serve`` the ewg will compile the html pages and opens a bro
 > "[Creative-Workflow](http://www.creative-workflow.berlin/company.html)"
 
 ### Available Tasks
-For a compleete list type: ``gulp -T``
+For a compleete list type: ``ewg tasks`` which is equivalent to ``gulp -T``
 
 ### command line arguments
 ```
@@ -58,14 +58,16 @@ Usage: ewg [command] [options]
 
 Commands:
   init      initialises a ewg repo
-  serve     !not workin at he moment, use gulp serve! starts a webserver on an ewg repo and reloads on changes
+  serve     starts a webserver on ewg repo and watches for changes
   generate  generates the dist folder from your ewg repo
+  tasks     show registered tasks
+  *         call any gulp task by passing it to ewg, also arguments are passed
 
 Options:
-  --help        help
-  --version     version
+  --help        Hilfe anzeigen                                         [boolean]
+  --version     Version anzeigen                                       [boolean]
   --theme       installs a zipped theme from url when running ewg "init"
-                                              [Standard: "simple"]
+                                                            [Standard: "simple"]
   --production  loads production settings when running ewg "serve" or
                 "generate", default: development
   --test        load test settings when running ewg "serve" or "generate",
@@ -89,6 +91,8 @@ Planned themes are here: https://github.com/easy-websites
 > TODO docs via github.io page
 
 ### Changes
+##### Version 0.0.13
+  * ewg serve now prints colored child process output
 
 ##### Version 0.0.12
   * move and rename ``./src/workspace.yml`` to ``./ewg-config.yml``

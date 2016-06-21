@@ -2,7 +2,7 @@
 
 require('coffee-script/register')
 
-var exec = require('child_process').exec;
+var spawn = require('child_process').spawn;
 
 var log  = require('ewg-logging');
 
@@ -16,6 +16,7 @@ var argv = require('yargs')
     .command('init',     'initialises a ewg repo')
     .command('serve',    'starts a webserver on ewg repo and watches for changes')
     .command('generate', 'generates the dist folder from your ewg repo')
+    .command('tasks',    'show registered tasks')
     .option('theme',{
       describe: 'installs a zipped theme from url when running ewg "init"',
       default: 'simple'
@@ -28,27 +29,25 @@ var argv = require('yargs')
     })
     .argv;
 
-var gulpArgs = "";
-if(argv.test){
-  process.argv.push('--test');
-  gulpArgs = gulpArgs + ' --test'
-}
-if(argv.production){
-  process.argv.push('--production');
-  gulpArgs = gulpArgs + ' --production'
-}
 
 if(argv._[0] == 'init'){
   log.green("installing theme: " + argv.theme)
+
   require(__dirname + "/../lib/ewg/installer").init(argv.theme);
 }
-else if(argv._[0] == 'serve'){
-  exec('gulp serve' + gulpArgs, function(err, stdout, stderr){
-    log.log(err, stdout, stderr);
+else{
+  if(argv._[0] == 'tasks'){
+    process.argv = ['', '', '-T']
+  }
+
+  //directly pass ewg args to gulp
+  cmd = spawn('gulp', process.argv.slice(2), { stdio: 'inherit' })
+
+  cmd.on('data', function (data) {
+    log.log(data.toString());
   });
-}
-else if(argv._[0] == 'generate'){
-  exec('gulp generate' + gulpArgs, function(err, stdout, stderr){
-    log.log(err, stdout, stderr);
+
+  cmd.on('error', function (data) {
+    log.error(data.toString());
   });
 }
