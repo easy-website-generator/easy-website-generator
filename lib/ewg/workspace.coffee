@@ -9,8 +9,9 @@ class Workspace
     config         = new Config(@configFile, @onChange)
 
     @config        = config.config
-    @srcPath       = @config.paths.src.base ? './src'
-    @distPath      = @config.paths.dist.base ? './dist'
+    @basePath      = @config.basePath ? '.'
+    @srcPath       = @config.paths.src.base ? 'src'
+    @distPath      = @config.paths.dist.base ? 'dist'
     @isDevelopment = stage.isDevelopment()
     @isProduction  = stage.isProduction()
     @isTest        = stage.isTest()
@@ -19,10 +20,10 @@ class Workspace
     @gulp = gulp
 
   srcPathTo: (type, relative_path = '') =>
-    nodePath.join(@srcPath, @config.paths.src[type], relative_path)
+    nodePath.join(@basePath, @srcPath, @config.paths.src[type], relative_path)
 
   distPathTo: (type, relative_path = '') =>
-    nodePath.join(@distPath, @config.paths.dist[type], relative_path)
+    nodePath.join(@basePath, @distPath, @config.paths.dist[type], relative_path)
 
   uriPathTo: (type, relative_path = '') =>
     unless fs.existsSync(@distPathTo(type, relative_path))
@@ -35,7 +36,7 @@ class Workspace
                 path.replace('/', '-'),
                 "#{@config.generators.folder}/#{path}/config.yml",
                 @gulp,
-                "#{@config.basePath?}")
+                "#{@basePath}")
 
     unless g.config.hasOwnProperty 'stop_on_error'
       g.config.stop_on_error = @config.generators.stop_on_error
