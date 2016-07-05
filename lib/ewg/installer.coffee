@@ -1,13 +1,14 @@
 fs      = require 'fs'
 request = require 'request'
 unzip   = require 'unzip'
-exec    = require('child_process').exec;
 path    = require 'path'
 loader  = require 'ewg-config'
 glob    = require 'glob'
 mkdirp  = require 'mkdirp'
 rmdir   = require 'rmdir'
 log     = require 'ewg-logging'
+spawn   = require('child_process').spawn;
+
 
 localZip = "./tmp.zip"
 
@@ -48,7 +49,7 @@ module.exports = m =
 
 
   detectWsConfig: (basePath) ->
-    glob.sync("#{basePath}/**/workspace.yml")[0]
+    glob.sync("#{basePath}/**/ewg-config.yml")[0]
 
   moveFilesToParentDirectory: (dir) ->
     files = glob.sync("#{dir}/**/*", dot: true)
@@ -64,7 +65,7 @@ module.exports = m =
 
     config = loader.loadRawYaml(wsConfig).development
 
-    extractedThemeFolder = "#{path.dirname(wsConfig)}/.."
+    extractedThemeFolder = "#{path.dirname(wsConfig)}"
 
     # copy all files from unzipped folder to workspace
     m.moveFilesToParentDirectory extractedThemeFolder
@@ -74,5 +75,12 @@ module.exports = m =
 
     for entry in config.template.run_after_copy
       console.log entry
-      exec entry, (error, stdout, stderr) =>
-        log.log error, stdout, stderr
+      cmd = spawn(entry, [], { stdio: 'inherit', cwd: "#{extractedThemeFolder}/..", shell: true })
+
+      cmd.on('data', (data) ->
+        console.log(data.toString())
+      )
+
+      cmd.on('error', (data) ->
+        console.error(data.toString())
+      )
