@@ -91,6 +91,9 @@ Planned themes are here: https://github.com/easy-websites
 > TODO docs via github.io page
 
 ### Changes
+##### Version 0.0.16
+  * fix installer issues with new ewg-config.yml
+
 ##### Version 0.0.15
   * use new basePath option also for workspace path building
 
