@@ -7,7 +7,7 @@ engines:
     enabled: true
     config:
       languages:
-      - javascript
+        - javascript
 
 exclude_paths:
   - test/
