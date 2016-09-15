@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-require('coffee-script/register')
+require('coffee-script/register');
 
 var spawn = require('child_process').spawn;
 

@@ -7,13 +7,15 @@ glob    = require 'glob'
 mkdirp  = require 'mkdirp'
 rmdir   = require 'rmdir'
 log     = require 'ewg-logging'
-spawn   = require('child_process').spawn;
+spawn   = require('child_process').spawn
 
 
-localZip = "./tmp.zip"
+localZip = './tmp.zip'
 
 module.exports = m =
-  init: (theme = 'all') =>
+  themeHost: 'https://github.com'
+  themeUrl:  'easy-websites/ewg-theme-[THEME_NAME]/archive/master.zip'
+  init: (theme = 'all') ->
     themePath = m.detectThemeSource theme
 
     log.green "installing theme: #{themePath}"
@@ -24,25 +26,25 @@ module.exports = m =
     # download zipped theme file
     m.download themePath, localZip
 
-  detectThemeSource: (theme = 'ewg-theme-default') ->
+  detectThemeSource: (theme = 'simple') ->
     unless theme[...4] is 'http'
       # if theme source is no url, it is a ewg hostet theme
-      theme = "https://github.com/easy-websites/ewg-theme-#{theme}/archive/master.zip"
+      return "#{m.themeHost}/#{m.themeUrl.replace('[THEME_NAME]', theme)}"
 
     theme
 
-  download: (remote, local) =>
+  download: (remote, local) ->
     stream = fs.createWriteStream(local)
     request.get(remote).pipe stream
 
-    stream.on 'finish', =>
+    stream.on 'finish', ->
       m.extract(local, '.')
 
-  extract: (zipFile, target) =>
+  extract: (zipFile, target) ->
     stream = fs.createReadStream(zipFile).pipe(
       unzip.Extract({ path: target }))
 
-    stream.on 'close', =>
+    stream.on 'close', ->
       fs.unlink zipFile
 
       m.install()
@@ -59,7 +61,7 @@ module.exports = m =
         mkdirp.sync path.dirname(target)
         fs.rename src, target
 
-  install: =>
+  install: ->
     # search for workspace.yml in downloaded and extractet folders
     wsConfig = m.detectWsConfig('.')
 
@@ -75,7 +77,10 @@ module.exports = m =
 
     for entry in config.template.run_after_copy
       console.log entry
-      cmd = spawn(entry, [], { stdio: 'inherit', cwd: "#{extractedThemeFolder}/..", shell: true })
+      cmd = spawn(
+        entry,
+        [],
+        { stdio: 'inherit', cwd: "#{extractedThemeFolder}/..", shell: true })
 
       cmd.on('data', (data) ->
         console.log(data.toString())

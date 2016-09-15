@@ -91,6 +91,9 @@ Planned themes are here: https://github.com/easy-websites
 > TODO docs via github.io page
 
 ### Changes
+##### Version 0.0.17
+  * make coffeelint happy
+
 ##### Version 0.0.16
   * fix installer issues with new ewg-config.yml
 
