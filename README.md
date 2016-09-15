@@ -30,7 +30,7 @@ mkdir my-workspace
 
 cd my-workspace
 
-ewg init --theme all
+ewg init --theme simple
 
 npm install --cached
 
@@ -40,7 +40,7 @@ ewg serve
 
 _In case you have permission problems prefix the commandos with ``sudo``_
 
-_Available themes at the moment: all, simple_
+_Available themes at the moment: all, simple, wordpress. Many are planned [github.com/easy-websites](https://github.com/easy-websites) - help creating them =)_
 
 After running ``ewg serve`` the ewg will compile the html pages and opens a browser. On every source change the browser will reload.
 
