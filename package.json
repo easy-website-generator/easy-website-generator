@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "ewg-generator": "github:easy-website-generator/ewg-generator#gulp-4",
     "mocha": "^2.4.5",
     "mocha-sinon": "^1.1.5",
     "sinon": "^1.17.3"
