@@ -33,7 +33,7 @@
   "dependencies": {
     "coffee-script": "^1.10.0",
     "ewg-config": "*",
-    "ewg-generator": "*",
+    "ewg-generator": "github:easy-website-generator/ewg-generator#gulp-4",
     "ewg-logging": "*",
     "mkdirp": "^0.5.1",
     "request": "^2.69.0",
@@ -44,7 +44,6 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "ewg-generator": "github:easy-website-generator/ewg-generator#gulp-4",
     "mocha": "^2.4.5",
     "mocha-sinon": "^1.1.5",
     "sinon": "^1.17.3"

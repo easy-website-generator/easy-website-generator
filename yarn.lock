@@ -301,9 +301,9 @@ ewg-config@*:
     ewg-logging "*"
     js-yaml "^3.5.2"
 
-ewg-generator@*:
+"ewg-generator@github:easy-website-generator/ewg-generator#gulp-4":
   version "1.0.9"
-  resolved "https://registry.yarnpkg.com/ewg-generator/-/ewg-generator-1.0.9.tgz#b4d0f1230f52d8811a28f347ab1d9042b057cb9d"
+  resolved "https://codeload.github.com/easy-website-generator/ewg-generator/tar.gz/f86ab2fc9acb96810e033219d1d5eba65f50fbd2"
   dependencies:
     coffee-script "^1.10.0"
     ewg-config "*"
