@@ -47,6 +47,7 @@ class Workspace
     fs.existsSync path
 
   onChange: =>
+    #TODO inject generate method, because gulp.run is deprecated in version 4
     @gulp.run 'generate'
 
 module.exports = new Workspace("ewg-config.yml")
