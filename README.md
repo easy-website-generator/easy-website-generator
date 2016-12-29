@@ -91,6 +91,9 @@ Planned themes are here: https://github.com/easy-websites
 > TODO docs via github.io page
 
 ### Changes
+##### Version 1.0.0
+  * i guess it is stable now, used in in over 20 projects
+
 ##### Version 0.0.17
   * make coffeelint happy
 
