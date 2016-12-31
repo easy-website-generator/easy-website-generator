@@ -57,21 +57,20 @@ For a compleete list type: ``ewg tasks`` which is equivalent to ``gulp -T``
 Usage: ewg [command] [options]
 
 Commands:
-  init      initialises a ewg repo
-  serve     starts a webserver on ewg repo and watches for changes
-  generate  generates the dist folder from your ewg repo
+  init      initialises a ewg setup
+  serve     starts a webserver on ewg `src` folder and watches for changes
+  generate  generates the `dist` folder from your `src` folder by executing the pre defined gulp tasks
   tasks     show registered tasks
-  *         call any gulp task by passing it to ewg, also arguments are passed
+  *         you can call any gulp task by passing it to the `ewg` command
 
 Options:
-  --help        Hilfe anzeigen                                         [boolean]
-  --version     Version anzeigen                                       [boolean]
-  --theme       installs a zipped theme from url when running ewg "init"
-                                                            [Standard: "simple"]
-  --production  loads production settings when running ewg "serve" or
-                "generate", default: development
-  --test        load test settings when running ewg "serve" or "generate",
-                default: development
+  --help        show help                                              [boolean]
+  --version     show version                                           [boolean]
+  --theme       installs a zipped theme from url when running `ewg init [--theme=simple]`
+  --production  loads production settings from your `ewg-config.yml` when running `ewg serve` or
+                "generate", default yml section: development
+  --test        load test settings from your `ewg-config.yml` when running `ewg serve` or `ewg generate`,
+                default yml section: development
 
 ```
 
@@ -79,20 +78,20 @@ Options:
 
 ``ewg init --theme simple`` see: https://github.com/easy-websites/ewg-theme-simple
 
-``ewg init --theme default`` see: https://github.com/easy-websites/ewg-theme-default
+``ewg init --theme all`` see: https://github.com/easy-websites/ewg-theme-all
 
-Planned themes are here: https://github.com/easy-websites
+``ewg init --theme bootstrap-standalone`` see: https://github.com/easy-websites/ewg-theme-bootstrap-standalone
+
+All themes are located here: https://github.com/easy-websites
 
 ### Ressources
 > "[Easy-Website-Generator](https://github.com/easy-website-generator/easy-website-generator)"
 
 > "[Creative-Workflow](http://www.creative-workflow.berlin/company.html)"
 
-> TODO docs via github.io page
-
 ### Changes
 ##### Version 1.0.0
-  * i guess it is stable now, used in in over 20 projects
+  * i guess it is stable now, i used it in in over 20 projects
 
 ##### Version 0.0.17
   * make coffeelint happy
