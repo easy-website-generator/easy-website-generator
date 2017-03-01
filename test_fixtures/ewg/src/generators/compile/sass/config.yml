@@ -1,0 +1,16 @@
+development: &default
+  enabled: true
+  minimize: true
+  source: 'src/assets/styles'
+  target: 'dist/styles'
+  selector: '**/*.sass'
+  source_maps: './maps'
+  include_paths:
+    - 'node_modules/bootstrap-sass/assets/stylesheets'
+
+
+test: &test
+  <<: *default
+
+production: &production
+  <<: *default

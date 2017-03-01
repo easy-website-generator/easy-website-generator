@@ -1,0 +1,17 @@
+development: &default
+  enabled: true
+  source: 'dist'
+  selector: '*.html'
+  target: 'dist'
+  siteUrl: 'http://github.com/easy-website-generator'
+  fileName: 'sitemap.xml'
+  changefreq: 'weekly'
+  blacklist:
+    - ''
+
+
+test: &test
+  <<: *default
+
+production: &production
+  <<: *default

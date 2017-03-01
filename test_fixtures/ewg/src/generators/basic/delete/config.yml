@@ -1,0 +1,10 @@
+development: &default
+  enabled: true
+  folders:
+    - 'dist'
+
+test: &test
+  <<: *default
+
+production: &production
+  <<: *default

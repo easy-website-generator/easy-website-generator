@@ -1,0 +1,16 @@
+%title
+  = @globals.title
+
+- # PageSPeed: Durch die Angabe eines Zeichensatzes in einem Meta-Tag wird der Lookahead-Downloader in IE8 deaktiviert.
+= @meta_tag_http 'Content-Type', 'text/html; charset=utf-8'
+
+= @meta_tag_http 'X-UA-Compatible', 'IE=edge'
+= @meta_tag 'robots',      @globals.robots
+= @meta_tag 'description', @globals.description
+= @meta_tag 'keywords',    @globals.keywords
+= @meta_tag 'viewport',    @globals.get('viewport', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+
+%link{rel: "alternate", href: @globals.canonical, hreflang: @globals.language}
+
+= @link_tag 'favicon.ico', 'icon', 'image/x-icon'
+= @link_tag 'favicon.ico', 'shortcut icon', 'image/x-icon'

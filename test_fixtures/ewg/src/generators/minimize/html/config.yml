@@ -1,0 +1,17 @@
+development: &default
+  enabled: false
+  source: 'src/assets/public'
+  target: 'dist'
+  selector: '**/*.html'
+  options:
+    collapseWhitespace: true
+    removeComments: true
+    minifyJS: true
+    minifyCSS: true
+
+
+test: &test
+  <<: *default
+
+production: &production
+  <<: *default

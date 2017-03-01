@@ -1,0 +1,27 @@
+!!!
+%html{lang: 'de'}
+  %head
+    = @render_partial 'shared/_metadata'
+    = @render_partial 'shared/_stylesheets'
+    = @render_partial 'shared/_javascripts'
+    :content-for javascripts
+    :content-for stylesheets
+
+  %body{class: "#{@body_class}"}
+    .content-wrapper.container
+      %span.anchor{id: 'top'}
+
+      %header
+        = @render_partial 'shared/_header'
+
+      .content-inner-wrapper
+        %main
+          = @body
+
+      %footer
+        = @render_partial 'shared/_footer'
+
+    = @render_partial 'shared/_stylesheets.footer'
+    = @render_partial "shared/_javascripts.footer"
+    :content-for javascripts_footer
+    :content-for stylesheets_footer

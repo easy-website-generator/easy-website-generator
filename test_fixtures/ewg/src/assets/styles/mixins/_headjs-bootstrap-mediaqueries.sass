@@ -1,0 +1,106 @@
+// min-width: $screen-xs
+@mixin max-width-xxs
+  html.lt-480 &
+    @content
+
+@mixin min-width-xxs
+  html.gte-300 &
+    @content
+
+@mixin min-width-xs
+  html.gte-480 &
+    @content
+
+@mixin min-width-between-xs-sm
+  html.gte-650 &
+    @content
+
+// max-width: $screen-xs
+@mixin max-width-xs
+  html.lt-768 &
+    @content
+
+// min-width: $screen-sm
+@mixin min-width-sm
+  html.gte-768 &
+    @content
+
+// max-width: $screen-sm
+@mixin max-width-sm
+  html.lt-992 &
+    @content
+
+// min-width: $screen-md
+@mixin min-width-md
+  html.gte-992 &
+    @content
+
+// max-width: $screen-md
+@mixin max-width-md
+  html.lt-1200 &
+    @content
+
+// min-width: $screen-lg
+@mixin min-width-lg
+  html.gte-1200 &
+    @content
+
+// hide element in specific viewport range
+@mixin hide-xs
+  html.lt-768 &
+    display: none
+
+@mixin hide-sm
+  html.gte-768.lt-992 &
+    display: none
+
+@mixin hide-md
+  html.gte-992.lt-1200 &
+    display: none
+
+@mixin hide-lg
+  html.gte-1200 &
+    display: none
+
+// classes for hiding elements
+.hidden-xs
+  +hide-xs
+
+.hidden-sm
+  +hide-sm
+
+.hidden-md
+  +hide-md
+
+.hidden-lg
+  +hide-lg
+
+//hide elements from an specific point
+@mixin hide-from-xs
+  html.gte-768 &
+    display: none
+
+@mixin hide-from-sm
+  html.gte-768 &
+    display: none
+
+@mixin hide-from-md
+  html.gte-992 &
+    display: none
+
+@mixin hide-from-lg
+  +hide-lg
+
+
+// classes for hiding elements
+.hidden-from-xs
+  +hide-from-xs
+
+.hidden-from-sm
+  +hide-from-sm
+
+.hidden-from-md
+  +hide-from-md
+
+.hidden-from-lg
+  +hide-from-lg

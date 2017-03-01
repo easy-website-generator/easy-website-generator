@@ -1,0 +1,28 @@
+development: &default
+  enabled: true
+  selector: '**/*'
+  repetitive:
+    -
+      source: 'src/assets/styles'
+      target: 'dist/styles'
+      selector: '**/*.css'
+    -
+      source: 'src/assets/scripts'
+      target: 'dist/scripts'
+      selector: '**/*.js'
+    -
+      source: 'src/assets/public'
+      target: 'dist'
+    -
+      source: 'src/assets/images'
+      target: 'dist/images'
+    -
+      source: 'src/views'
+      target: 'dist'
+      selector: '**/*.html'
+
+test: &test
+  <<: *default
+
+production: &production
+  <<: *default

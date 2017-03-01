@@ -1,0 +1,13 @@
+development: &default
+  enabled: false
+  source: 'src/assets/styles'
+  target: 'dist/styles'
+  selector: '**/*.css'
+  suffix: '.min'
+
+
+test: &test
+  <<: *default
+
+production: &production
+  <<: *default

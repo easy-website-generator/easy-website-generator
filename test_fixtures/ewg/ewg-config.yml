@@ -1,0 +1,51 @@
+development: &default
+  server:
+    port: 9294
+    open: "external"
+    notify: true
+    startPath: 'index.html'
+    server:
+      baseDir: './dist'
+    ui:
+      port: 8080
+      weinre:
+        port: 9090
+    ghostMode:
+      clicks: true
+      forms: true
+      scroll: true
+
+  generators:
+    folder: 'src/generators'
+
+  paths:
+    src:
+      base:       './src'
+      images:     'assets/images'
+      scripts:    'assets/scripts'
+      styles:     'assets/styles'
+      public:     'assets/public'
+      views:      'views'
+    dist:
+      base:       './dist'
+      images:     'images'
+      scripts:    'scripts'
+      styles:     'styles'
+      public:     ''
+      views:      ''
+
+  globals:
+    robots:   'index,follow,noodp,noydir'
+    title:    'Creative-Workflow'
+    language: 'de'
+
+  template:
+    run_after_copy:
+      - 'npm install --cache'
+      - 'sudo npm install -g bower'
+
+test:
+  <<: *default
+
+production:
+  <<: *default
