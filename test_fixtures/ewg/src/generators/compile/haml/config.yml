@@ -1,0 +1,25 @@
+development: &default
+  enabled: true
+  source:  'src/views'
+  target:  'dist'
+  selector: '**/*.html.haml'
+  compiler:
+    custom_helper:
+      - 'src/lib/**/*.coffee'
+    format: 'html5'
+    extension: '.html'
+    layout: 'layout.haml'
+    input_path:  'src/views'
+    output_path: 'dist'
+  minimize:
+    enabled: true
+    collapseWhitespace: true
+    removeComments: true
+    minifyJS: true
+    minifyCSS: true
+
+test: &test
+  <<: *default
+
+production: &production
+  <<: *default

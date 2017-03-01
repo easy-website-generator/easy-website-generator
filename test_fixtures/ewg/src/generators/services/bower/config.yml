@@ -1,0 +1,10 @@
+development: &default
+  enabled: true
+  target: 'dist/lib'
+
+
+test: &test
+  <<: *default
+
+production: &production
+  <<: *default

@@ -1,0 +1,16 @@
+development: &default
+  enabled: false
+  target: 'dist/scripts'
+  repetitive:
+    -
+      combined: 'company.combined.js'
+      sources:
+        - 'dist/scripts/lib/*.js'
+        - 'dist/scripts/app/*.js'
+        - 'dist/scripts/company.js'
+
+test: &test
+  <<: *default
+
+production: &production
+  <<: *default

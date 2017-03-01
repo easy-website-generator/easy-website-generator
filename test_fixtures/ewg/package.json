@@ -1,0 +1,35 @@
+{
+  "name": "my-website",
+  "description": "",
+  "license": "MIT",
+  "scripts": {
+    "generate": "gulp generate --production",
+    "serve": "gulp serve"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "browser-sync": "^2.11.1",
+    "colors": "^1.1.2",
+    "del": "*",
+    "ewg-config": "*",
+    "ewg-haml-coffee-gulp": "*",
+    "easy-website-generator": "*",
+    "gulp": "*",
+    "gulp-bower": "0.0.13",
+    "gulp-changed": "^1.3.0",
+    "gulp-coffee": "^2.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "*",
+    "gulp-htmlmin": "^1.3.0",
+    "gulp-ignore": "^2.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.1.1",
+    "gulp-sitemap": "^3.0.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1",
+    "replace-ext": "0.0.1",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.5"
+  }
+}
