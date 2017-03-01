@@ -3,11 +3,19 @@ engines:
     enabled: true
   fixme:
     enabled: true
+  eslint:
+    enabled: true
   duplication:
     enabled: true
     config:
       languages:
         - javascript
 
+ratings:
+  paths:
+    - bin/**
+    - lib/**
+
 exclude_paths:
-  - test/
+  - test/**
+  - test_fixtures/**
