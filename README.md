@@ -24,7 +24,7 @@ First you need to install [nodeJs](https://nodejs.org/en/download/). Then in you
 
 ```
 
-npm install -g easy-website-generator coffee-script bower gulp
+npm install -g easy-website-generator coffee-script gulp yarn
 
 mkdir my-workspace
 
@@ -32,7 +32,7 @@ cd my-workspace
 
 ewg init --theme simple
 
-npm install --cached
+yarn install
 
 ewg serve
 
