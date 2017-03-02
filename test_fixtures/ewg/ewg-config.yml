@@ -16,7 +16,7 @@ development: &default
       scroll: true
 
   generators:
-    folder: 'src/generators'
+    folder: './generators'
 
   paths:
     src:

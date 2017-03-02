@@ -10,6 +10,6 @@ console.log ' -----------------------------------'.green
 console.log " | starting Easy-Website-Generator (#{stage.current().red})".green
 console.log ' -----------------------------------'.green
 
-require('require-dir')("src/generators", recurse: true)
+require('require-dir')("generators", recurse: true)
 
 gulp.task('default', ['serve'])
