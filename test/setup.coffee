@@ -9,8 +9,8 @@ ewgTestPath = 'test_fixtures/ewg'
 # console.log 'running "ewg init --theme=all" in test_fixtures folder'
 # execSync("cd #{ewgTestPath} && ewg init --theme=all")
 
-console.log "running #{'yarn install'.yellow} in test_fixtures folder"
-execSync("cd #{ewgTestPath} && yarn install")
+console.log "running #{'npm install'.yellow} in test_fixtures folder"
+execSync("cd #{ewgTestPath} && npm install")
 
 console.log "running #{'ewg generate-and-exit --test'.yellow} in test_fixtures folder"
 execSync("rm -rf #{ewgTestPath}/dist")
