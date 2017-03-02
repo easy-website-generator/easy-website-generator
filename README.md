@@ -90,6 +90,10 @@ All themes are located here: https://github.com/easy-websites
 > "[Creative-Workflow](http://www.creative-workflow.berlin/company.html)"
 
 ### Changes
+##### Version 1.0.1
+  * update ewg-generator dependency
+  * introduce basic tests / code metrics
+
 ##### Version 1.0.0
   * i guess it is stable now, i used it in in over 20 projects
 
