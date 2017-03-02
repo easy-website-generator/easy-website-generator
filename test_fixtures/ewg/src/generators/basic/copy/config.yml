@@ -1,6 +1,6 @@
 development: &default
   enabled: true
-  selector: '**/*'
+  selector: '**/.*'
   repetitive:
     -
       source: 'src/assets/styles'

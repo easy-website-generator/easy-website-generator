@@ -32,6 +32,7 @@
   "homepage": "https://github.com/easy-website-generator/easy-website-generator#readme",
   "dependencies": {
     "coffee-script": "^1.10.0",
+    "color": "^1.0.3",
     "ewg-config": "^1.0.2",
     "ewg-generator": "^1.0.9",
     "ewg-logging": "^1.0.1",
@@ -44,6 +45,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "file": "^0.2.2",
     "mocha": "^2.4.5",
     "mocha-phantomjs": "^4.1.0",
     "mocha-sinon": "^1.1.5",

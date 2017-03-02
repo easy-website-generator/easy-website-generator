@@ -1,5 +1,5 @@
-execSync = require('child_process').execSync;
-
+execSync    = require('child_process').execSync;
+color       = require 'color'
 ewgTestPath = 'test_fixtures/ewg'
 
 # console.log 'preparing test_fixtures folder'
@@ -9,8 +9,8 @@ ewgTestPath = 'test_fixtures/ewg'
 # console.log 'running "ewg init --theme=all" in test_fixtures folder'
 # execSync("cd #{ewgTestPath} && ewg init --theme=all")
 
-console.log 'running "npm install" in test_fixtures folder'
-execSync("cd #{ewgTestPath} && npm install")
+console.log "running #{'yarn install'.yellow} in test_fixtures folder"
+execSync("cd #{ewgTestPath} && yarn install")
 
-console.log 'running "ewg generate-and-exit --production" in test_fixtures folder'
-execSync("cd #{ewgTestPath} && ewg generate-and-exit --production")
+console.log "running #{'ewg generate-and-exit --test'.yellow} in test_fixtures folder"
+execSync("cd #{ewgTestPath} && ewg generate-and-exit --test")
