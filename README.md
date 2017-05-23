@@ -24,15 +24,13 @@ First you need to install [nodeJs](https://nodejs.org/en/download/). Then in you
 
 ```
 
-npm install -g easy-website-generator coffee-script gulp yarn
+npm install -g easy-website-generator coffee-script gulp
 
 mkdir my-workspace
 
 cd my-workspace
 
 ewg init --theme simple
-
-yarn install
 
 ewg serve
 
