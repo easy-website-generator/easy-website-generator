@@ -1,4 +1,7 @@
-# easy-website-generator [![Build Status](https://travis-ci.org/easy-website-generator/easy-website-generator.svg?branch=master)](https://travis-ci.org/easy-website-generator/easy-website-generator) [![npm version](https://badge.fury.io/js/easy-website-generator.svg)](https://badge.fury.io/js/easy-website-generator) [![Code Climate](https://codeclimate.com/github/easy-website-generator/easy-website-generator/badges/gpa.svg)](https://codeclimate.com/github/easy-website-generator/easy-website-generator)
+# easy-website-generator [![Build Status](https://travis-ci.org/easy-website-generator/easy-website-generator.svg?branch=master)](https://travis-ci.org/easy-website-generator/easy-website-generator) [![Contribute](https://img.shields.io/badge/Contribution-Open-brightgreen.svg)](CONTRIBUTING.md) [![Code Climate](https://codeclimate.com/github/easy-website-generator/easy-website-generator/badges/gpa.svg)](https://codeclimate.com/github/easy-website-generator/easy-website-generator) [![npm](https://img.shields.io/npm/dt/easy-website-generator.svg)](https://www.npmjs.com/package/easy-website-generator) [![Beerpay](https://beerpay.io/easy-website-generator/easy-website-generator/badge.svg?style=flat)](https://beerpay.io/easy-website-generator/easy-website-generator)
+
+[![NPM](https://nodei.co/npm/easy-website-generator.png)](https://nodei.co/npm/easy-website-generator/)
+
 
 The quick and easy way to develop modern and fast static websites a.k.a Easy-Website-Generator =)
 
@@ -118,4 +121,4 @@ All themes are located here: https://github.com/easy-websites
 ## Support on Beerpay
 Hey dude! Help me out for a couple of :beers:!
 
-[![Beerpay](https://beerpay.io/easy-website-generator/easy-website-generator/badge.svg?style=beer-square)](https://beerpay.io/easy-website-generator/easy-website-generator)  [![Beerpay](https://beerpay.io/easy-website-generator/easy-website-generator/make-wish.svg?style=flat-square)](https://beerpay.io/easy-website-generator/easy-website-generator?focus=wish)
+[![Beerpay](https://beerpay.io/easy-website-generator/easy-website-generator/badge.svg?style=beer)](https://beerpay.io/easy-website-generator/easy-website-generator)  [![Beerpay](https://beerpay.io/easy-website-generator/easy-website-generator/make-wish.svg?style=flat)](https://beerpay.io/easy-website-generator/easy-website-generator?focus=wish)
