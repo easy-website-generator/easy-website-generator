@@ -114,3 +114,8 @@ All themes are located here: https://github.com/easy-websites
   * move and rename ``./src/workspace.yml`` to ``./ewg-config.yml``
   * lib/ewg/workspace full configured via ewg-config.yml
   * new config values introduces ``paths.src.base: './src'`` and ``paths.dist.base: './dist'``
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/easy-website-generator/easy-website-generator/badge.svg?style=beer-square)](https://beerpay.io/easy-website-generator/easy-website-generator)  [![Beerpay](https://beerpay.io/easy-website-generator/easy-website-generator/make-wish.svg?style=flat-square)](https://beerpay.io/easy-website-generator/easy-website-generator?focus=wish)
